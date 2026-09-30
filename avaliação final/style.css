@@ -1,0 +1,242 @@
+
+  
+:root {
+    --bg-primary: #0f172a;        
+    --card-bg: rgba(30, 41, 59, 0.7); 
+    --accent-color: #8b5cf6;     
+    --accent-light: #a78bfa;    
+    --neon-cyan: #06b6d4;       
+    --neon-pink: #ec4899;       
+    --text-primary: #f8fafc;     
+    --text-secondary: #94a3b8;   
+    --border-color: rgba(255, 255, 255, 0.1);
+    --radius: 16px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at top left, #1e1b4b, #0f172a, #020617);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: var(--card-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5),
+                0 0 30px rgba(139, 92, 246, 0.15);
+}
+
+.cabeçalho {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.cabeçalho h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    background: linear-gradient(135deg, var(--neon-cyan), var(--accent-light), var(--neon-pink));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 5px;
+}
+
+.cabeçalho h1 span {
+    -webkit-text-fill-color: var(--neon-pink);
+    text-shadow: 0 0 12px rgba(236, 72, 153, 0.6);
+}
+
+.cabeçalho p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.formulario {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.formulario input[type="text"] {
+    flex: 1;
+    background: rgba(15, 23, 42, 0.6);
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    padding: 12px 16px;
+    color: var(--text-primary);
+    font-size: 1rem;
+    outline: none;
+    transition: var(--transition);
+}
+
+.formulario input[type="text"]:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.3);
+}
+
+.formulario button {
+    background: linear-gradient(135deg, var(--accent-color), var(--neon-pink));
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);
+}
+
+.formulario button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(236, 72, 153, 0.5);
+}
+
+.mensagem {
+    color: var(--neon-cyan);
+    font-size: 0.85rem;
+    min-height: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.informações {
+    display: flex;
+    justify-content: space-around;
+    background: rgba(15, 23, 42, 0.4);
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.informações > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.informações strong {
+    font-size: 1.5rem;
+    color: var(--neon-cyan);
+    text-shadow: 0 0 10px rgba(6, 182, 212, 0.4);
+}
+
+.informações span {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+#percentualComclusão {
+    color: var(--neon-pink);
+    text-shadow: 0 0 10px rgba(236, 72, 153, 0.4);
+}
+
+
+.controles {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.controles input,
+.controles select {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 10px;
+    color: var(--text-primary);
+    outline: none;
+    transition: var(--transition);
+}
+
+.controles input {
+    flex: 2;
+}
+
+.controles select {
+    flex: 1;
+    cursor: pointer;
+}
+
+.controles select option {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+.controles input:focus,
+.controles select:focus {
+    border-color: var(--neon-cyan);
+}
+
+
+section h2 {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+div[id*="lista"] {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+
+div[id*="lista"]::-webkit-scrollbar {
+    width: 6px;
+}
+
+div[id*="lista"]::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 10px;
+}
+
+.item-tarefa {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    padding: 12px 16px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.item-tarefa:hover {
+    background: rgba(255, 255, 255, 0.07);
+    transform: translateX(4px);
+    border-color: var(--accent-light);
+}
+
+.item-tarefa.concluida {
+    opacity: 0.5;
+    text-decoration: line-through;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organiza+|Lista de Tarefas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <header class="cabeçalho">
+            <h1>Organiza<span>+</span></h1>
+            <p>Organize suas tarefas de forma simples e prática</p>
+        </header>
+
+        <section class="card">
+            <form id="formTarefa" class="formulario">
+                <input type="text" id="tituloTarefa" placeholder="Digite uma nova tarefa" autocomplete="off">
+                <button type="submit">adicionar</button>
+            </form>
+
+            <p id="mensagem" class="mensagem"></p>
+
+            <div class="informações">
+                <div>
+                    <strong id="totalTarefas">0</strong>
+                    <span>Total</span>
+                </div>
+                <div>
+                    <strong id="percentualConclusão">0%</strong>
+                    <span>Progresso</span>
+                </div>
+            </div>
+
+            <div class="controles">
+                <input type="text" id="pesquisa" placeholder="pesquisar tarefa">
+                <select id="filtro">
+                    <option value="todas">Todas</option>
+                    <option value="pendentes">Pendentes</option>
+                    <option value="concluidas">Concluidas</option>
+                </select>
+            </div>
+
+            <section>
+                <h2>Minhas tarefas</h2>
+                <div id="listaTarefas"></div>
+            </section>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
